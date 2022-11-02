@@ -14,6 +14,10 @@ subprojects {
         plugin("org.jetbrains.kotlin.jvm")
     }
 
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 
     group = "org.example"
     version = "1.0-SNAPSHOT"

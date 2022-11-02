@@ -4,7 +4,6 @@ import commons.JDBCCredentials;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public final class Main {
@@ -23,7 +22,7 @@ public final class Main {
             }
             try (var statement = connection.prepareStatement(SELECT_SQL)) {
                 statement.setString(1, name);
-                try (ResultSet resultSet = statement.executeQuery()) {
+                try (var resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
                         System.out.println("Id: " + resultSet.getInt("id")
                                 + ", name: " + resultSet.getString("name"));

@@ -26,11 +26,11 @@ public final class Main {
             }
             try (var statement = connection.createStatement()) {
                 try (var resultSet = statement.executeQuery("SELECT id, name FROM person")) {
-                    final var metaData = resultSet.getMetaData();
+                    /*final var metaData = resultSet.getMetaData();
                     int columns = metaData.getColumnCount();
                     for (int i = 1; i <= columns; i++) {
                         System.out.print("\t\t" + metaData.getColumnLabel(i));
-                    }
+                    }*/
                     System.out.println();
                     while (resultSet.next()) {
                         final int id = resultSet.getInt("id");
