@@ -22,6 +22,7 @@ public final class Main {
                 statement.executeUpdate("INSERT INTO person(id, name) VALUES (" + id + ",'" + name + "')");
                 connection.commit();
             } catch (SQLException exception) {
+                connection.rollback();
                 exception.printStackTrace();
             }
             System.out.println("Success");
